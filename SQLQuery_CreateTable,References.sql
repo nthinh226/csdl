@@ -72,6 +72,10 @@ insert into Sinhvien(masv,tensv,gt,ns,malop)
 values ('004',N'Thảo','0','2001-2-5','61TH2');
 select * from Sinhvien
 
+insert into Sinhvien(masv,tensv,gt,ns)
+values ('006',N'Chịu','1','2001-02-26')
+select * from Sinhvien
+
 --Insert Mon
 insert into Mon(mamon,tenmon,sotc)
 values ('cse100',N'Tin học căn bản',2);
@@ -80,6 +84,7 @@ select * from Mon
 insert into Mon(mamon,tenmon,sotc)
 values ('cse480',N'Cơ Sở Dữ Liệu',2);
 select * from Mon
+
 
 --Insert Ket Qua
 insert into Ketqua(masv,mamon,diem)
@@ -138,3 +143,8 @@ where Sinhvien.malop=LOP.malop
 --Phép kết nối bằng có thể viết thành kết nối nội như sau
 select masv,tensv,gt,ns,tenlop
 from Sinhvien sv inner join LOP l on sv.malop=l.malop
+
+--Phép kết nối trái
+--Liệt kê tất cả các sv của lớp
+select masv,tensv,gt,ns,tenlop
+from Sinhvien sv left outer join LOP l on sv.malop=l.malop
